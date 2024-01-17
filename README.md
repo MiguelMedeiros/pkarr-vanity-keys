@@ -33,7 +33,7 @@ npm install
 Ready to generate some fancy keys? Here's how you do it:
 
 1. **Run the script with your desired vanity string.**
-   If you don't provide one, it defaults to "l33t" (because we're cool like that):
+   If you don't provide one, it defaults to `l33t` (because we're cool like that):
 
    ```bash
    npm run start [yourVanityString]
@@ -59,4 +59,11 @@ Ready to generate some fancy keys? Here's how you do it:
 
 And that's it! You're now the proud owner of some ultra-cool, PKarr-powered vanity keys. Go forth and secure the digital realm with style! 🚀✨
 
-Remember, this project is all about learning and having fun with PKarr. So, don't hesitate to tinker around, break things, and make them even cooler. Happy coding!
+## 📚 To Dos
+
+- [x] Search for vanity string at the beginning of the public key
+- [ ] Search for vanity string at the end of the public key
+- [ ] Search for vanity string in the entire key, not just the beginning
+- [ ] Add a CLI interface
+
+Remember, this project is all about learning and having fun with PKarr. So, don't hesitate to tinker around, break things, and make them even cooler. Happy coding! 🎩✨
