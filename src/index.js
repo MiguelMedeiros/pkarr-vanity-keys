@@ -33,8 +33,8 @@ count:  ${count}
 started at: ${startTimestamp}
 current at: ${currentTimestamp}
 
-private key: ${pk}
-secret key:  ${sk}
+public key: ${pk}
+secret key: ${sk}
 `
   );
 
