@@ -1,0 +1,20 @@
+{
+  "name": "pkarr-vanity-keys",
+  "version": "1.0.0",
+  "description": "Generate vanity keys for the PKARR.",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Miguel Medeiros",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "pkarr": "^1.3.0"
+  }
+}
