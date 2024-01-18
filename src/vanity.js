@@ -2,16 +2,16 @@ import { Pkarr, z32 } from "pkarr";
 
 const ALPHABET = "ybndrfg8ejkmcpqxot1uwisza345h769";
 
-export const generateNewKeyPair = () => {
+const generateNewKeyPair = () => {
   const seed = Pkarr.generateSeed();
   return Pkarr.generateKeyPair(Buffer.from(seed, "hex"));
 };
 
-export const getPublicKey = (key) => {
+const getPublicKey = (key) => {
   return z32.encode(key.publicKey);
 };
 
-export const getSecretKey = (key) => {
+const getSecretKey = (key) => {
   return z32.encode(key.secretKey);
 };
 
@@ -27,6 +27,36 @@ Valid characters are: ${ALPHABET}
       );
 
       process.exit(1);
+    }
+  }
+};
+
+export const search = (vanity) => {
+  let count = 0;
+  const startTimestamp = new Date().toISOString();
+
+  while (true) {
+    const currentTimestamp = new Date().toISOString();
+    const key = generateNewKeyPair();
+    const pk = getPublicKey(key);
+    const sk = getSecretKey(key);
+    count++;
+
+    console.log(
+      `
+  pk vanity search: ${vanity}
+  count:  ${count}
+  
+  started at: ${startTimestamp}
+  current at: ${currentTimestamp}
+  
+  public key: ${pk}
+  secret key: ${sk}
+  `
+    );
+
+    if (pk.startsWith(vanity)) {
+      break;
     }
   }
 };
