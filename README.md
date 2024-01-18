@@ -4,6 +4,12 @@ Welcome to the whimsical world of PKarr Vanity Keys, where your cryptographic ke
 
 This project is your first-class ticket to generating key pairs with a personal flair, powered by the magic of PKarr and a sprinkle of z32 for seasoning.
 
+
+
+https://github.com/MiguelMedeiros/pkarr-vanity-keys/assets/5798170/53c23369-70da-4cec-a34b-7063ebabfaed
+
+
+
 ## 🚀 Getting Started
 
 Before diving in, make sure you've got Node.js (version 12 or later) installed in your machine. It's the engine that powers our key-generating spaceship!
