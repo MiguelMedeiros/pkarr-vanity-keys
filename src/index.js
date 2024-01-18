@@ -1,5 +1,7 @@
 import { Pkarr, z32 } from "pkarr";
 
+const ALPHABET = "ybndrfg8ejkmcpqxot1uwisza345h769";
+
 const generateNewKeyPair = () => {
   const seed = Pkarr.generateSeed();
   return Pkarr.generateKeyPair(Buffer.from(seed, "hex"));
@@ -14,9 +16,11 @@ const getSecretKey = (key) => {
 };
 
 const args = process.argv.slice(2);
-const vanity = args.length ? args : "l33t";
+const vanity = args.length ? args[0] : "133t";
 const startTimestamp = new Date().toISOString();
 let count = 0;
+
+verify(vanity);
 
 while (true) {
   const currentTimestamp = new Date().toISOString();
@@ -40,5 +44,21 @@ secret key: ${sk}
 
   if (pk.startsWith(vanity)) {
     break;
+  }
+}
+
+function verify(vanity) {
+  for (let char of vanity.split("")) {
+    if (!ALPHABET.includes(char)) {
+      console.log(
+        `
+Invalid character: ${char}
+  
+  Valid characters are: ${ALPHABET}
+      `
+      )
+
+      process.exit(1);
+    }
   }
 }
