@@ -10,7 +10,7 @@ export const askVanity = async () => {
 
 export const askSearchMode = async () => {
   return await select({
-    message: "Select a package manager:\n",
+    message: "Select search mode (default: start):\n",
     choices: [
       {
         name: "start",
