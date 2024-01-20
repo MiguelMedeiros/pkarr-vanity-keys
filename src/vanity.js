@@ -30,8 +30,7 @@ Valid characters are: ${ALPHABET}
     }
   }
 };
-
-export const search = (vanity) => {
+export const search = (vanity, searchMode = "start") => {
   let count = 0;
   const startTimestamp = new Date().toISOString();
 
@@ -45,6 +44,7 @@ export const search = (vanity) => {
     console.log(
       `
 pk vanity search: ${vanity}
+search mode: ${searchMode}
 count:  ${count}
 
 started at: ${startTimestamp}
@@ -55,8 +55,34 @@ secret key: ${sk}
     `
     );
 
-    if (pk.startsWith(vanity)) {
-      break;
+    let found = false;
+    switch (searchMode) {
+      case "start":
+        found = pk.startsWith(vanity);
+        break;
+      case "end":
+        found = pk.endsWith(vanity);
+        break;
+      case "anywhere":
+        found = pk.includes(vanity);
+        break;
+      default:
+        throw new Error(`Invalid search mode: ${searchMode}`);
+    }
+
+    if (found) {
+      console.log("Vanity string found!");
+
+      return {
+        message: "Vanity string found!",
+        vanity,
+        searchMode,
+        count,
+        startTimestamp,
+        currentTimestamp,
+        publicKey: pk,
+        secretKey: sk,
+      };
     }
   }
 };

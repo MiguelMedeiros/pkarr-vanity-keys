@@ -4,11 +4,7 @@ Welcome to the whimsical world of PKarr Vanity Keys, where your cryptographic ke
 
 This project is your first-class ticket to generating key pairs with a personal flair, powered by the magic of PKarr and a sprinkle of z32 for seasoning.
 
-
-
 https://github.com/MiguelMedeiros/pkarr-vanity-keys/assets/5798170/53c23369-70da-4cec-a34b-7063ebabfaed
-
-
 
 ## 🚀 Getting Started
 
@@ -38,23 +34,38 @@ npm install
 
 Ready to generate some fancy keys? Here's how you do it:
 
-1. **Run the script with your desired vanity string.**
-   If you don't provide one, it defaults to `l33t` (because we're cool like that):
+1. **Run the script with your desired vanity string and search mode.**
+   The vanity string is what you want to appear in your keys. The search mode determines where in the key you want your vanity string to appear: at the beginning (`start`), at the end (`end`), or anywhere (`anywhere`). If you don't provide a vanity string, it defaults to `l33t`. If you don't specify a search mode, it defaults to `start`.
 
    ```bash
-   npm run start [yourVanityString]
+   npm run start [yourVanityString] [searchMode]
    ```
 
-   Example (let's say you want your keys to start with "cool"):
+   Examples:
+
+   To find keys **starting** with `cool`:
 
    ```bash
-   npm run start cool
+   npm run start cool start
+   ```
+
+   To find keys **ending** with `cool`:
+
+   ```bash
+   npm run start cool end
+   ```
+
+   To find keys containing `cool` **anywhere**:
+
+   ```bash
+   npm run start cool anywhere
    ```
 
 2. **Watch the magic happen!**
    The script will keep churning out keys, showing you:
 
    - The vanity string you're after.
+   - The search mode in use.
    - How many attempts it's made.
    - The current timestamp (so you know you're not stuck in a time loop).
    - The shiny new public and secret keys it's generated.
@@ -68,8 +79,9 @@ And that's it! You're now the proud owner of some ultra-cool, PKarr-powered vani
 ## 📚 To Dos
 
 - [x] Search for vanity string at the beginning of the public key
-- [ ] Search for vanity string at the end of the public key
-- [ ] Search for vanity string in the entire key, not just the beginning
+- [x] Search for vanity string at the end of the public key
+- [x] Search for vanity string in the entire key, not just the beginning
+- [x] Added tests suite with Jest
 - [ ] Add a CLI interface
 
 Remember, this project is all about learning and having fun with PKarr. So, don't hesitate to tinker around, break things, and make them even cooler. Happy coding! 🎩✨
