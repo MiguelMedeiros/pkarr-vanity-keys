@@ -1,17 +1,17 @@
 import { Pkarr, z32 } from "pkarr";
 
-const ALPHABET = "ybndrfg8ejkmcpqxot1uwisza345h769";
+export const ALPHABET = "ybndrfg8ejkmcpqxot1uwisza345h769";
 
-const generateNewKeyPair = () => {
+export const generateNewKeyPair = () => {
   const seed = Pkarr.generateSeed();
   return Pkarr.generateKeyPair(Buffer.from(seed, "hex"));
 };
 
-const getPublicKey = (key) => {
+export const getPublicKey = (key) => {
   return z32.encode(key.publicKey);
 };
 
-const getSecretKey = (key) => {
+export const getSecretKey = (key) => {
   return z32.encode(key.secretKey);
 };
 
@@ -44,15 +44,15 @@ export const search = (vanity) => {
 
     console.log(
       `
-  pk vanity search: ${vanity}
-  count:  ${count}
-  
-  started at: ${startTimestamp}
-  current at: ${currentTimestamp}
-  
-  public key: ${pk}
-  secret key: ${sk}
-  `
+pk vanity search: ${vanity}
+count:  ${count}
+
+started at: ${startTimestamp}
+current at: ${currentTimestamp}
+
+public key: ${pk}
+secret key: ${sk}
+    `
     );
 
     if (pk.startsWith(vanity)) {
