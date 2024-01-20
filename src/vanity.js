@@ -20,7 +20,7 @@ export const verify = (vanity) => {
   if (vanity.length === 0) {
     console.log(`Empty vanity string`);
 
-    process.exit(1);
+    return false;
   }
 
   for (let char of vanity.split("")) {
@@ -33,9 +33,10 @@ Valid characters are: ${ALPHABET}
     `
       );
 
-      process.exit(1);
+      return false;
     }
   }
+  return true;
 };
 
 export const search = (vanity, searchMode = "start") => {
