@@ -1,6 +1,6 @@
 {
   "name": "pkarr-vanity-keys",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Generate vanity keys for the PKARR.",
   "main": "src/index.js",
   "type": "module",
