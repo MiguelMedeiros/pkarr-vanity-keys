@@ -1,5 +1,5 @@
 import { search, verify } from "./vanity.js";
-import { askVanity, searchMode } from "./helper.js";
+import { askVanity, askSearchMode } from "./helper.js";
 
 const start = async () => {
   const vanity = await askVanity();
@@ -11,7 +11,7 @@ const start = async () => {
     return;
   }
 
-  const mode = await searchMode();
+  const mode = await askSearchMode();
   search(vanity, mode);
 };
 

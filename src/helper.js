@@ -8,7 +8,7 @@ export const askVanity = async () => {
   return await input({ message: "Enter your vanity string" });
 };
 
-export const searchMode = async () => {
+export const askSearchMode = async () => {
   return await select({
     message: "Select a package manager:\n",
     choices: [
