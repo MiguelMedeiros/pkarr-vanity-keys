@@ -35,30 +35,15 @@ npm install
 Ready to generate some fancy keys? Here's how you do it:
 
 1. **Run the script with your desired vanity string and search mode.**
-   The vanity string is what you want to appear in your keys. The search mode determines where in the key you want your vanity string to appear: at the beginning (`start`), at the end (`end`), or anywhere (`anywhere`). If you don't provide a vanity string, it defaults to `l33t`. If you don't specify a search mode, it defaults to `start`.
+   The vanity string is what you want to appear in your keys.
+   The search mode determines where in the key you want your vanity string to appear:
+
+   - at the beginning (`start`),
+   - at the end (`end`),
+   - or anywhere (`anywhere`).
 
    ```bash
-   npm run start [yourVanityString] [searchMode]
-   ```
-
-   Examples:
-
-   To find keys **starting** with `cool`:
-
-   ```bash
-   npm run start cool start
-   ```
-
-   To find keys **ending** with `cool`:
-
-   ```bash
-   npm run start cool end
-   ```
-
-   To find keys containing `cool` **anywhere**:
-
-   ```bash
-   npm run start cool anywhere
+   npm run start
    ```
 
 2. **Watch the magic happen!**
@@ -82,6 +67,6 @@ And that's it! You're now the proud owner of some ultra-cool, PKarr-powered vani
 - [x] Search for vanity string at the end of the public key
 - [x] Search for vanity string in the entire key, not just the beginning
 - [x] Added tests suite with Jest
-- [ ] Add a CLI interface
+- [x] Add a CLI interface
 
 Remember, this project is all about learning and having fun with PKarr. So, don't hesitate to tinker around, break things, and make them even cooler. Happy coding! 🎩✨

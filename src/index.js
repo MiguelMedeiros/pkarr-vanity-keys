@@ -1,14 +1,27 @@
+import { select, input } from "@inquirer/prompts";
+
 import { verify, search } from "./vanity.js";
 
-const args = process.argv.slice(2);
-const vanity = args.length > 0 ? args[0] : "133t";
-const searchModeInput = args.length > 1 ? args[1] : "start"; // Default to 'start' if not provided
-
-// Validate searchMode
-const validSearchModes = ["start", "end", "anywhere"];
-const searchMode = validSearchModes.includes(searchModeInput)
-  ? searchModeInput
-  : "start";
+const vanity = await input({ message: "Enter your vanity string" });
 
 verify(vanity);
+
+const searchMode = await select({
+  message: "Select a package manager",
+  choices: [
+    {
+      name: "start",
+      value: "start",
+    },
+    {
+      name: "end",
+      value: "end",
+    },
+    {
+      name: "anywhere",
+      value: "anywhere",
+    },
+  ],
+});
+
 search(vanity, searchMode);
