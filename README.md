@@ -4,7 +4,7 @@ Welcome to the whimsical world of PKarr Vanity Keys, where your cryptographic ke
 
 This project is your first-class ticket to generating key pairs with a personal flair, powered by the magic of PKarr and a sprinkle of z32 for seasoning.
 
-https://github.com/MiguelMedeiros/pkarr-vanity-keys/assets/5798170/53c23369-70da-4cec-a34b-7063ebabfaed
+https://github.com/MiguelMedeiros/pkarr-vanity-keys/assets/5798170/e0710882-0a92-42ae-a1de-134fe97dde96
 
 ## 🚀 Getting Started
 
