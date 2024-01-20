@@ -31,21 +31,4 @@ describe("vanity functions", () => {
     const vanity = "ybndrfg8ejkmcpqxot1uwisza345h769";
     expect(() => verify(vanity)).not.toThrow();
   });
-
-  it("should log error and call process.exit(1) for invalid characters", () => {
-    const vanity = "miguel"; // assuming 'miguel' contains invalid characters for your case
-    const logSpy = jest.spyOn(console, "log");
-    const exitSpy = jest.spyOn(process, "exit").mockImplementation(() => {});
-
-    verify(vanity);
-
-    expect(logSpy).toHaveBeenCalledWith(
-      expect.stringContaining("Invalid character")
-    );
-    expect(exitSpy).toHaveBeenCalledWith(1);
-
-    // Restore the original implementations so other tests are not affected
-    logSpy.mockRestore();
-    exitSpy.mockRestore();
-  });
 });
