@@ -1,4 +1,5 @@
 import { Pkarr, z32 } from "pkarr";
+import { clear } from "./helper.js";
 
 export const ALPHABET = "ybndrfg8ejkmcpqxot1uwisza345h769";
 
@@ -16,6 +17,12 @@ export const getSecretKey = (key) => {
 };
 
 export const verify = (vanity) => {
+  if (vanity.length === 0) {
+    console.log(`Empty vanity string`);
+
+    process.exit(1);
+  }
+
   for (let char of vanity.split("")) {
     if (!ALPHABET.includes(char)) {
       console.log(
@@ -30,9 +37,12 @@ Valid characters are: ${ALPHABET}
     }
   }
 };
+
 export const search = (vanity, searchMode = "start") => {
   let count = 0;
   const startTimestamp = new Date().toISOString();
+
+  clear();
 
   while (true) {
     const currentTimestamp = new Date().toISOString();
@@ -40,6 +50,8 @@ export const search = (vanity, searchMode = "start") => {
     const pk = getPublicKey(key);
     const sk = getSecretKey(key);
     count++;
+
+    clear();
 
     console.log(
       `
@@ -61,7 +73,8 @@ secret key: ${sk}
         found = pk.startsWith(vanity);
         break;
       case "end":
-        found = pk.endsWith(vanity);
+        // endswith but exclude the last character
+        found = pk.slice(0, -1).endsWith(vanity);
         break;
       case "anywhere":
         found = pk.includes(vanity);
